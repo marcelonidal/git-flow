@@ -6,6 +6,11 @@
 - [Introdução](#intro)
 - [Feature](#feature)
 - [Release](#release)
+- [Hotfix](#hotfix)
+- [Conflitos](#confitos)
+- [Release](#release)
+- [Release](#release)
+- [Release](#release)
 
 ---
 <a name="intro"></a>
@@ -61,7 +66,8 @@ git pull
 ```
 
 ---
-### Trabalhando com Release:  - [**[indice]**](#home)
+<a name="release"></a>
+### Trabalhando com Release: - [**[indice]**](#home)
 - Acesse a branch de desenvolvimento e atualize a branch local:
 ```
 git fetch --all && git pull
@@ -114,6 +120,7 @@ git checkout master e git push
 ```
 
 ---
+<a name="hotfix"></a>
 ### Trabalhando com Hotfix: - [**[indice]**](#home)
 - Acessar a master e realizar o comando:
 ```
@@ -181,43 +188,56 @@ git push
 ```
 
 ---
+<a name="conflitos"></a>
 ### Resolvendo Conflitos: - [**[indice]**](#home)
-Alinhar:
-•	Quando ocorrer conflitos e você não for o único desenvolvedor, alinhar com os outros devs quais dados manter.
+#### Alinhar:
+- Quando ocorrer conflitos e você não for o único desenvolvedor, alinhar com os outros devs quais dados manter.
 
-•	Alterar os testes unitários se for o caso, testar a aplicação para ver se está ok.
+- Alterar os testes unitários se for o caso, testar a aplicação para ver se está ok.
 
-Pull Request:
-•	Criar o pull request e caso dê conflito, fazer os seguintes passos:
-Atualizar a branch de desenvolvimento;
-Ir para a feature e digitar:
+#### Pull Request:
+- Criar o pull request e caso dê conflito, fazer os seguintes passos:
+Atualizar a branch de desenvolvimento;<br>
+Ir para a feature e digitar:<br>
+```
 git merge desenvolvimento (mescla todas as alterações de desenvolvimento com a feature).
+```
 
-•	Abrir o KDiff3: git mergetool
-selecionar o quadrante desejado para solucionar o conflito. Tela dividida em Base (Quadrante A), Local (Quadrante B) e Remoto (Quadrante C).
- 
+- Abrir o KDiff3: git mergetool
+selecionar o quadrante desejado para solucionar o conflito. Tela dividida em Base (Quadrante A), Local (Quadrante B) e Remoto (Quadrante C).<br>
+   ![git2](img/git2.png)<br> 
 
-•	Realizar o commit da solução do conflito:
+- Realizar o commit da solução do conflito:
+```
 git commit (gerará a mensagem default).
+```
 
-•	Enviar as alterações: 
+- Enviar as alterações: 
+```
 git push
+```
 
-Detached Head:
-•	Caso ocorra conflito no Pull Request e o GIT peça para fazer um Sync now:
-  
+#### Detached Head:
+- Caso ocorra conflito no Pull Request e o GIT peça para fazer um Sync now:
+   ![git3](img/git3.png)<br> 
 
-•	O Bitbucket indicará o ponto do conflito pedindo pra criar uma Detached Head:
- 
-Obs: no caso o merge da imagem é demonstrativo, mas você fará o merge para a desenvolvimento ou master e commitará a solução para a sua feature remota.
+- O Bitbucket indicará o ponto do conflito pedindo pra criar uma Detached Head:
+   ![git4](img/git4.png)<br>
+   
+>[!NOTE]  
+> no caso o merge da imagem é demonstrativo, mas você fará o merge para a desenvolvimento ou master e commitará a solução para a sua feature remota.
 
-•	Comando para publicar a resolução do conflito:
+- Comando para publicar a resolução do conflito:
+```
 git push origin HEAD:feature/nome-da-feature
+```
 
-•	Após o commit realizado o merge será liberado no Pull Request:
- 
-
-### Comandos mais utilizados: 
+- Após o commit realizado o merge será liberado no Pull Request:
+   ![git5](img/git5.png)<br>
+   
+---
+<a name="conflitos"></a>
+### Comandos mais utilizados: - [**[indice]**](#home)
 •	Configurações:
 
 Verificar usuário configurado:

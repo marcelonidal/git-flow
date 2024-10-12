@@ -7,7 +7,7 @@
 - [Feature](#feature)
 - [Release](#release)
 - [Hotfix](#hotfix)
-- [Conflitos](#conflitos)
+- [Conflitos](#conflitos-topic)
 - [Comandos Comuns](#comandos)
 
 ---
@@ -186,7 +186,7 @@ git push
 ```
 
 ---
-<a name="conflitos"></a>
+<a name="conflitos-topic"></a>
 ### Resolvendo Conflitos: - [**[indice]**](#home)
 
 #### Alinhar:

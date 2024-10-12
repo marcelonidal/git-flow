@@ -4,16 +4,14 @@
 ### Indice
 
 - [Introdução](#intro)
-- [SoapUI](#soap-ui)
-- [Consideracoes Finais](#consideracoes)
+- [Feature](#feature)
+- [Release](#release)
 
 ---
-### Tutorial de como utilizar as ferramentas de testes Postman e SOAPUI
-
-Antes de iniciarmos com as ferramentas, necessitamos de alguns conceitos de serviços:
-
 <a name="intro"></a>
-### Introdução
+### Introdução - [**[indice]**](#home)
+
+   ![git1](img/git1.png)<br>
 
 **Master:** código executado em produção.<br>
 **Hotfix:** Criada quando há um bug em produção. Os ajustes realizados são aplicados na master e na de desenvolvimento, assim mantendo todos atualizados.<br>
@@ -21,67 +19,98 @@ Antes de iniciarmos com as ferramentas, necessitamos de alguns conceitos de serv
 **Develop:** Desenvolvimento, criada a partir da master.<br>
 **Feature:** Criada a partir do desenvolvimento, serve para adicionar uma nova funcionalidade. Quando finalizada, ela é mergeada para a desenvolvimento (pull request).<br>
 
-### Trabalhando com Features:
--	Realizar o clone do projeto, fazer o pull para garantir que está atualizado localmente.
+---
+<a name="feature"></a>
+### Trabalhando com Features: - [**[indice]**](#home)
+-	Realizar o clone do projeto, fazer o pull para garantir que está atualizado localmente.<br>
 
--	Criando a feature:
+-	Criando a feature:<br>
+```
 git flow feature start "ARQ-1405-Ajustar-Validacao"
-automaticamente realizará o checkout para a nova feature.
+```
+automaticamente realizará o checkout para a nova feature.<br>
 
 -	Após realizar alterações, utilize o comando para visualizar os arquivos modificados:
+```
 git status
+```
 
-•	Adicione ao Stage todos os arquivos modificados:
+-	Adicione ao Stage todos os arquivos modificados:<br>
+```
 git add .
+```
 
-•	Informe a mensagem do commit:
+-	Informe a mensagem do commit:<br>
+```
 git commit -m "ARQ-1405 – ajuste de validacao"
 
-•	Adicione a feature local no repositório:
+-	Adicione a feature local no repositório:<br>
+```
 git flow feature publish
+```
 
-•	Criar o pull request:
-Acessar o bitbucket, clicar em create (pull request), adicionar a descrição, conferir os revisores e marcar close branch para ela ser encerrada e mergeada com desenvolvimento (neste caso).
+-	Criar o pull request:
+Acessar o bitbucket, clicar em create (pull request), adicionar a descrição, conferir os revisores e marcar close branch para ela ser encerrada e mergeada com desenvolvimento (neste caso).<br>
 
-•	Realize os comandos para atualizar a branch desenvolvimento local:
-•	git checkout desenvolvimento
+-	Realize os comandos para atualizar a branch desenvolvimento local:<br>
+```
+git checkout desenvolvimento
 git pull
+```
 
-Trabalhando com Release: 
-•	Acesse a branch de desenvolvimento e atualize a branch local:
+---
+### Trabalhando com Release:  - [**[indice]**](#home)
+-	Acesse a branch de desenvolvimento e atualize a branch local:<br>
+```
 git fetch --all && git pull
+```
 
-•	Verificar a última tag criada:
+-	Verificar a última tag criada:<br>
+```
 git describe --tags
+```
 
-•	Criar a release (tag):
+-	Criar a release (tag):<br>
+```
 git flow release start 1.4.0
+```
 
-•	Publicar a release:
+-	Publicar a release:<br>
+```
 git flow release publish
+```
 
-•	É aconselhável atualizar os branches release, desenvolvimento e master antes da finalização.
+-	É aconselhável atualizar os branches release, desenvolvimento e master antes da finalização.<br>
 
-•	Fechar a release:
+-	Fechar a release:<br>
+```
 git flow release finish 1.4.0
+```
 
-•	Irá realizar o merge com a master, caso tenha commit na release, ele retornará para desenvolvimento. Assim todos os branchs ficarão atualizados.
+-	Irá realizar o merge com a master, caso tenha commit na release, ele retornará para desenvolvimento. Assim todos os branchs ficarão atualizados.<br>
 
-•	Ao término irá abrir no bash o vim (editor de texto) para adicionar a mensagem. Caso tenha o git extensions, abrirá uma janela gráfica para escrever a mensagem.
+-	Ao término irá abrir no bash o vim (editor de texto) para adicionar a mensagem. Caso tenha o git extensions, abrirá uma janela gráfica para escrever a mensagem.
 Comandos Vim: “:q” quit, “cq” quit without writing, “wq” write and quit, “:e” edit, “e!” edit and discard changes.
-Adicione a mensagem: 1.4.0
+Adicione a mensagem: 1.4.0<br>
 
-•	Caso dê tudo certo, exibirá: merge into master, release tagged 1.4.0, release back-merged into desenvolvimento, release/1.4.0 locally deleted, remotely deleted, e fará o checkout para desenvolvimento.
+-	Caso dê tudo certo, exibirá: merge into master, release tagged 1.4.0, release back-merged into desenvolvimento, release/1.4.0 locally deleted, remotely deleted, e fará o checkout para desenvolvimento.<br>
 
-•	Enviar as alterações locais para o remoto: git push --tags
+-	Enviar as alterações locais para o remoto: git push --tags<br>
+```
 git flow release finish 1.4.0
+```
 
-•	Para atualizar a branch de desenvolvimento remoto digite:
+-	Para atualizar a branch de desenvolvimento remoto digite:
+```
 git push
+```
 
-•	Realizar o mesmo processo para a master:
+-	Realizar o mesmo processo para a master:
+```
 git checkout master e git push
+```
 
+---
 Trabalhando com Hotfix: 
 •	Acessar a master e realizar o comando: 
 git fetch --all & git pull

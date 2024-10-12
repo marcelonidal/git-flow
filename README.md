@@ -28,7 +28,8 @@
 ```
 git flow feature start "ARQ-1405-Ajustar-Validacao"
 ```
-automaticamente realizará o checkout para a nova feature.<br>
+>[!NOTE]  
+> automaticamente realizará o checkout para a nova feature.
 
 - Após realizar alterações, utilize o comando para visualizar os arquivos modificados:
 ```
@@ -43,6 +44,7 @@ git add .
 - Informe a mensagem do commit:
 ```
 git commit -m "ARQ-1405 – ajuste de validacao"
+```
 
 - Adicione a feature local no repositório:
 ```
@@ -95,8 +97,9 @@ Adicione a mensagem: 1.4.0
 
 - Caso dê tudo certo, exibirá: merge into master, release tagged 1.4.0, release back-merged into desenvolvimento, release/1.4.0 locally deleted, remotely deleted, e fará o checkout para desenvolvimento.
 
-- Enviar as alterações locais para o remoto: git push --tags
+- Enviar as alterações locais para o remoto:
 ```
+git push --tags
 git flow release finish 1.4.0
 ```
 
@@ -111,51 +114,74 @@ git checkout master e git push
 ```
 
 ---
-Trabalhando com Hotfix: 
-•	Acessar a master e realizar o comando: 
+### Trabalhando com Hotfix: - [**[indice]**](#home)
+- Acessar a master e realizar o comando:
+```
 git fetch --all & git pull
+```
 
-•	Verificar última tag criada: 
+- Verificar última tag criada:
+```
 git describe --tags
+```
 
-•	Criar a hotfix: 
+- Criar a hotfix:
+```
 git flow hotfix start 1.4.1
+```
 
-•	Publicar no remoto: 
+- Publicar no remoto:
+```
 git flow hotfix publish
+```
 
-•	Realizar o checkout para p hotfix se estiver em outra branch: 
+- Realizar o checkout para p hotfix se estiver em outra branch:
+```
 git checkout hotfix/1.4.1
+```
 
-•	Seguir com a correção, adicionar ao Stage as modificações, realizar o commit e enviar os dados:
-•	git add .
-•	git commit -m "ARQ-1405 – ajuste de validacao"
+- Seguir com a correção, adicionar ao Stage as modificações, realizar o commit e enviar os dados:
+```
+git add .
+git commit -m "ARQ-1405 – ajuste de validacao"
 git push
+```
 
-•	Verificar se não há alteração remota: 
+- Verificar se não há alteração remota:
+```
 git fetch --all && git pull
+```
 
-•	É aconselhável atualizar os branches de hotfix, desenvolvimento e master antes da finalização.
+- É aconselhável atualizar os branches de hotfix, desenvolvimento e master antes da finalização.
 
-•	Encerrar o hotfix: 
+- Encerrar o hotfix:
+```
 git flow hotfix finish 1.4.1
+```
 
-•	Abrirá o editor de texto para inserir o comentário da tag, ex: 1.4.1.
+- Abrirá o editor de texto para inserir o comentário da tag, ex: 1.4.1.
 
-•	Fechará o hotfix, realizará o merge com a master, desenvolvimento e deletará a branch hotfix.
+- Fechará o hotfix, realizará o merge com a master, desenvolvimento e deletará a branch hotfix.
 
-•	Realizar o: git push para enviar as alterações em desenvolvimento.
+- Realizar o: git push para enviar as alterações em desenvolvimento.
 
-•	Subir as tags: 
+- Subir as tags:
+```
 git push --tags
+```
 
-•	Fazer o mesmo processo para a master: 
+- Fazer o mesmo processo para a master:
+```
 git checkout --master
+```
 
-•	Enviar as alterações: 
+- Enviar as alterações:
+```
 git push
+```
 
-Resolvendo Conflitos: 
+---
+### Resolvendo Conflitos: - [**[indice]**](#home)
 Alinhar:
 •	Quando ocorrer conflitos e você não for o único desenvolvedor, alinhar com os outros devs quais dados manter.
 

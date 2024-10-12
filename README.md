@@ -538,3 +538,5 @@ git clean -f -d para  remove diretórios untracked.
 git clean -f -x para remover untracked .gitignore.
 -i muda para o modo interativo.
 ```
+
+ [**[indice]**](#home)

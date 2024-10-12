@@ -7,8 +7,8 @@
 - [Feature](#feature)
 - [Release](#release)
 - [Hotfix](#hotfix)
-- [Conflitos](#confitos)
-- [Release](#release)
+- [Conflitos](#conflitos)
+- [Comandos Comuns](#comandos)
 - [Release](#release)
 - [Release](#release)
 
@@ -232,40 +232,55 @@ git push
 git push origin HEAD:feature/nome-da-feature
 ```
 
-- Após o commit realizado o merge será liberado no Pull Request:
+- Após o commit realizado o merge será liberado no Pull Request:<br>
    ![git5](img/git5.png)<br>
    
 ---
-<a name="conflitos"></a>
+<a name="comandos"></a>
 ### Comandos mais utilizados: - [**[indice]**](#home)
-•	Configurações:
 
-Verificar usuário configurado:
-•	git config user.name
+#### Configurações:
+
+<ins>Verificar usuário configurado:</ins>
+```
+git config user.name
 git config user.email
+````
 
 Caso não tenha config, realizar os comandos as seguir:
+```
 git config --global user.name "<nome_do_usuario>"
 git config --global user.email "<email_do_usuario>"
+```
 
-•	Inicializar projeto GIT:
-Inicializar um projeto git:
+<ins>Inicializar projeto GIT:</ins>
+```
 git init
+```
 
-Criando a referência para o repositório:
+<ins>Criando a referência para o repositório:</ins>
+```
 git remote rm origin
 git remote add origin <novo_repositório_a_ser_apontado.git>
+```
 
-Verificar os status do projeto:
+<ins>Verificar os status do projeto:</ins>
+```
 git status
+```
 
-Criar o arquivo .gitignore:
+<ins>Criar o arquivo .gitignore:</ins>
+```
 touch .gitignore
+```
 
-Criar o arquivo README:
+<ins>Criar o arquivo README:</ins>
+```
 touch README.md
+```
 
-Para "trackear" (adicionar) os arquivos:
+<ins>Para "trackear" (adicionar) os arquivos:</ins>
+```
 git add .gitignore //nome do arquivo que você quer adicionar ao git
 ou
 git add . //adiciona todas as modificações ao git
@@ -273,53 +288,67 @@ ou
 git add -A //adiciona e acompanha todas as modificações trackeadas e não trackeadas ao git
 ou
 git add *.<extenção do arquivo>
+```
 
-•	Commit:
-Aplicar o commit:
+#### Commit:
+
+<ins>Aplicar o commit:</ins>
+```
 git commit -m "início do projeto" // mensagem de identificação da alteração (sempre colocá-lo entre aspas)
+```
 
-Reescrever o Commit Local Antes do Push (Reword last commit):
+<ins>Reescrever o Commit Local Antes do Push (Reword last commit):</ins>
+```
 git commit --amend
 ou
 git commit --amend -m "<texto_do_commit>"
+```
 
-Interactive Rebase do commit:
+<ins>Interactive Rebase do commit:</ins>
+```
 git rebase -i //ações interativas do rebase, abrirá uma janela com a lista de commits.
+```
+> [!TIP]
+> Para editar pressione “s” para entrar no modo insert e “esc” para sair do modo insert.
+>
+> Opções da refatoração aceitas:
+> p(pick) = usar o commit atual;
+> r(reword) = usa o commit e edita a mensagem;
+> e(edit) = usa o commit, mas não faz o amend;
+> s(squash) = usa o commit, mas mescla com o commit anterior
+> f(fixup) = semelhante ao squash, mas descarta o log de commit
+>
+> Exemplo:
+> git rebase -i HEAD~2
+>
+> 
+> Aparecerá os dois últimos commits no modo de edição:
+> pick e499d89 Initial commit
+> pick 0c39034 Fixed types
+>
+> Escolher qual commit deseja alterar:
+> reword 0c39034 <novo_texto>
+>
+> OBS: A cada alteração salve e feche a lista de commits.
+>
+> Atualize o repositório com o comando:
+> git push --force
 
-Para editar pressione “s” para entrar no modo insert e “esc” para sair do modo insert.
-
-Opções da refatoração aceitas:
-p(pick) = usar o commit atual;
-r(reword) = usa o commit e edita a mensagem;
-e(edit) = usa o commit, mas não faz o amend;
-s(squash) = usa o commit, mas mescla com o commit anterior
-f(fixup) = semelhante ao squash, mas descarta o log de commit
-
-Exemplo:
-git rebase -i HEAD~2
-
-Aparecerá os dois últimos commits no modo de edição:
-pick e499d89 Initial commit
-pick 0c39034 Fixed types
-
-Escolher qual commit deseja alterar:
-reword 0c39034 <novo_texto>
-
-OBS: A cada alteração salve e feche a lista de commits.
-
-Atualize o repositório com o comando:
-git push --force
-
-Voltar para um Commit Específico Localmente:
+<ins>Voltar para um Commit Específico Localmente:</ins>
+```
 git reset --hard <hash_do_commit> //elimina os commits posteriores ao hash selecionado
+```
 
-Voltar para um Commit Especifico Remotamente:
+<ins>Voltar para um Commit Especifico Remotamente:</ins>
+```
 git reset --hard <hash_do_commit>
 git add .
 git commit -m "<texto_do_commit>"
 git push -f origin <nome_da_branch> //-f (força as substituições)
+```
 
-Deletar o histórico de Commit no Repositório do Github:
+<ins>Deletar o histórico de Commit no Repositório do Github:</ins>
+```
 AVISO: Esta ação removerá completamente seus antigos commits. Não podendo recuperá-los.
 git checkout --orphan temp_branch //Criando uma nova branch que não é mostrada pelo comando 'git branch'
 git add -A //Add todos os arquivos na nova branch criada
@@ -327,120 +356,187 @@ git commit -am "o primeiro commit" //add uma nova commit
 git branch -D master //deleta a branch master do seu repositório git
 git branch -m master //após deletar a master, vamos renomear a nova branch para master
 git push -f origin master //após todas essas mudanças, forçe um push com suas novas mudanças e pronto!
+```
 
-•	Repositório:
-Verificar qual repositório está configurado:
+#### Repositório:
+
+<ins>Verificar qual repositório está configurado:</ins>
+```
 git remote -v
+```
 
-Conectar ao repositório na nuvem:
+<ins>Conectar ao repositório na nuvem:</ins>
+```
 git remote add origin minhaUrl.git // colocar o link do repositório
+```
 
-Buscar mudanças no destino:
+<ins>Buscar mudanças no destino:</ins>
+```
 git fetch origin
+```
 
-Baixar as mudanças no destino:
+<ins>Baixar as mudanças no destino:</ins>
+```
 git pull origin
+```
 
-Visualizar todos os commits:
+<ins>Visualizar todos os commits:</ins>
+```
 git log
+```
 
-Clonar Projeto do Repositório:
+<ins>Clonar Projeto do Repositório:</ins>
+```
 git clone --branch <nome_da_branch> <url_da_branch>
 ou
 git clone <url_da_branch> //nesse caso ele sempre observará a master
+```
 
-Visualizar Branchs existentes:
+<ins>Visualizar Branchs existentes:</ins>
+```
 git branch -a
+```
 
-Trocar de Branch Local:
+<ins>Trocar de Branch Local:</ins>
+```
 git checkout <nome_da_branch>
+```
 
-Trocar de Branch Remota:
+<ins>Trocar de Branch Remota:</ins>
+```
 git checkout origin/<nome_da_branch>
+```
 
-Criar Nova Branch Local:
+<ins>Criar Nova Branch Local:</ins>
+```
 git checkout -b <nome_da_branch>
+```
 
-Deletar Branch Local:
+<ins>Deletar Branch Local:</ins>
+```
 git branch -d <nome_da_branch>
 ou
 git branch -D <nome_da_branch>
+```
 
-Subir a Nova Branch Local para o Repositório (Remoto):
+<ins>Subir a Nova Branch Local para o Repositório (Remoto):</ins>
+```
 git push origin <nome_da_branch>
 ou
 git flow <nome_da_branch> publish
+```
 
-Deletar a Branch Remoto:
+<ins>Deletar a Branch Remoto:</ins>
+```
 git push --delete origin <nome_da_branch>
 ou
 git push origin :<nome_da_branch>
+```
 
-Comparar Branch:
+<ins>Comparar Branch:</ins>
+```
 git diff <branch_raiz> <branch_destino>
+```
 
-Comparar Diferenças Dentro de uma Branch:
+<ins>Comparar Diferenças Dentro de uma Branch:</ins>
+```
 git diff
+```
 
-•	HEAD:
-Visualizar o HEAD COMPLETO de um Commit:
+#### HEAD:
+<ins>Visualizar o HEAD COMPLETO de um Commit:</ins>
+```
 git rev-parse HEAD
+```
 
-Visualizar o HEAD CURTO de um Commit:
+<ins>Visualizar o HEAD CURTO de um Commit:</ins>
+```
 git rev-parse --short HEAD
+```
 
-•	TAGS:
-Criação de Tags (Rotulação):
-•	git tag <nome_da_tag> <hash_do_commit> //hash_do_commit = número_do_commit
+#### TAGS:
+
+<ins>Criação de Tags (Rotulação):</ins>
+```
+git tag <nome_da_tag> <hash_do_commit> //hash_do_commit = número_do_commit
 git push --tags origin <nome_da_branch>
+```
 
-Deletar Tag Local:
+<ins>Deletar Tag Local:</ins>
+```
 git tag -d <nome_da_tag>
+```
 
-Deletar Tag no Repositorio:
+<ins>Deletar Tag no Repositorio:</ins>
+```
 git push origin :<nome_da_tag>
+```
 
-•	Conflitos:
-Correção de Conflito para Tag e Branch com o Mesmo Nome:
+#### Conflitos:
 
-Para deletar Tag:
+Correção de Conflito para Tag e Branch com o Mesmo Nome:<br>
+
+<ins>Para deletar Tag:</ins>
+```
 git push origin :refs/tags/<nome_da_tag>
+```
 
-Para deletar Branch:
+<ins>Para deletar Branch:</ins>
+```
 git push origin :refs/heads/<nome_da_branch>
+```
 
-•	MERGE X REBASE:
-A diferença entre MERGE e REBASE é que enquanto o MERGE mescla os projetos e cria um commit (projeto público e mantém o histórico), o REBASE coloca as modificações após o último commit e cria um commit no final (projeto privado e não mantém o histórico).
+#### MERGE X REBASE:
 
-OBS: é necessário estar na Branch que você quer receber as modificações e aplicar esse comando sempre chamando a branch que deseja juntar.
-Merge:
-O merge basicamente cria um novo commit no branch onde o merge é realizado. Este commit puxa consigo a última referência do branch a partir do qual o merge é realizado. Este commit “especial” é chamado de merge commit.
- 
+O git merge e o git rebase são duas formas de integrar mudanças de uma branch em outra no Git.<br>
 
-Rebase:
-O rebase literalmente unifica os branches envolvidos, puxando os commits para frente do branch de destino. É como se ele estivesse “refazendo” a base do branch onde o comando é executado.
- 
+A diferença entre MERGE e REBASE é que enquanto o MERGE mescla os projetos e cria um commit (projeto público e mantém o histórico), o REBASE coloca as modificações após o último commit e cria um commit no final (projeto privado e não mantém o histórico).<br>
 
-•	Alterações:
-Salvando alterações locais sem realizar o commit:
+> [!NOTE]
+> é necessário estar na Branch que você quer receber as modificações e aplicar esse comando sempre chamando a branch que deseja juntar.
+
+<ins>Merge:</ins><br>
+O merge basicamente cria um novo commit no branch onde o merge é realizado. Este commit puxa consigo a última referência do branch a partir do qual o merge é realizado. Este commit “especial” é chamado de merge commit.<br>
+
+Ele combina o histórico de duas branches sem alterar o histórico existente. Ele cria um commit de merge, que une os commits das branches em um ponto comum.<br>
+   ![git6](img/git6.png)<br>
+   
+<ins>Rebase:</ins><br>
+O rebase literalmente unifica os branches envolvidos, puxando os commits para frente do branch de destino. É como se ele estivesse “refazendo” a base do branch onde o comando é executado.<br>
+
+Ele "move" os commits de uma branch para aplicá-los em cima de outra. Ele "recria" os commits, como se você tivesse começado o trabalho na nova base (branch), sem criar um commit de merge.<br>
+   ![git7](img/git7.png)<br>
+
+#### Alterações:
+
+<ins>Salvando alterações locais sem realizar o commit:</ins>
+```
 git stash //coloca no cache os arquivos – opções: "pop" remove e "apply" atualiza.
+```
 
-Remover as Alterações Locais:
+<ins>Remover as Alterações Locais:</ins>
+```
 git checkout --<nome_do_arquivo> //remove o arquivo escolhido
+```
 
-Remover permanentemente as Alterações Locais:
+<ins>Remover permanentemente as Alterações Locais:</ins>
+```
 git reset --hard //remove todas as alterações
+```
 
-Corrigir o Arquivo .gitignore:
+<ins>Corrigir o Arquivo .gitignore:</ins>
+```
 git rm -r --cached .
 git add .
 git commit -m "<texto_do_commit>"
 git push origin <nome_da_branch>
+```
 
-Remover arquivos não trackeados:
+<ins>Remover arquivos não trackeados:</ins>
+```
 git clean -n para ver uma dry run.
 git clean -f para forçar deletar untracked files.
 git clean -f -d para  remove diretórios untracked.
 git clean -f -x para remover untracked .gitignore.
 -i muda para o modo interativo.
-
+```

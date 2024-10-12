@@ -9,8 +9,6 @@
 - [Hotfix](#hotfix)
 - [Conflitos](#conflitos)
 - [Comandos Comuns](#comandos)
-- [Release](#release)
-- [Release](#release)
 
 ---
 <a name="intro"></a>

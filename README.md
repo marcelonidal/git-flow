@@ -22,37 +22,37 @@
 ---
 <a name="feature"></a>
 ### Trabalhando com Features: - [**[indice]**](#home)
--	Realizar o clone do projeto, fazer o pull para garantir que está atualizado localmente.<br>
+- Realizar o clone do projeto, fazer o pull para garantir que está atualizado localmente.
 
--	Criando a feature:<br>
+- Criando a feature:
 ```
 git flow feature start "ARQ-1405-Ajustar-Validacao"
 ```
 automaticamente realizará o checkout para a nova feature.<br>
 
--	Após realizar alterações, utilize o comando para visualizar os arquivos modificados:
+- Após realizar alterações, utilize o comando para visualizar os arquivos modificados:
 ```
 git status
 ```
 
--	Adicione ao Stage todos os arquivos modificados:<br>
+- Adicione ao Stage todos os arquivos modificados:
 ```
 git add .
 ```
 
--	Informe a mensagem do commit:<br>
+- Informe a mensagem do commit:
 ```
 git commit -m "ARQ-1405 – ajuste de validacao"
 
--	Adicione a feature local no repositório:<br>
+- Adicione a feature local no repositório:
 ```
 git flow feature publish
 ```
 
--	Criar o pull request:
+- Criar o pull request:
 Acessar o bitbucket, clicar em create (pull request), adicionar a descrição, conferir os revisores e marcar close branch para ela ser encerrada e mergeada com desenvolvimento (neste caso).<br>
 
--	Realize os comandos para atualizar a branch desenvolvimento local:<br>
+- Realize os comandos para atualizar a branch desenvolvimento local:
 ```
 git checkout desenvolvimento
 git pull
@@ -60,52 +60,52 @@ git pull
 
 ---
 ### Trabalhando com Release:  - [**[indice]**](#home)
--	Acesse a branch de desenvolvimento e atualize a branch local:<br>
+- Acesse a branch de desenvolvimento e atualize a branch local:
 ```
 git fetch --all && git pull
 ```
 
--	Verificar a última tag criada:<br>
+- Verificar a última tag criada:
 ```
 git describe --tags
 ```
 
--	Criar a release (tag):<br>
+- Criar a release (tag):
 ```
 git flow release start 1.4.0
 ```
 
--	Publicar a release:<br>
+- Publicar a release:
 ```
 git flow release publish
 ```
 
--	É aconselhável atualizar os branches release, desenvolvimento e master antes da finalização.<br>
+- É aconselhável atualizar os branches release, desenvolvimento e master antes da finalização.
 
--	Fechar a release:<br>
+- Fechar a release:
 ```
 git flow release finish 1.4.0
 ```
 
--	Irá realizar o merge com a master, caso tenha commit na release, ele retornará para desenvolvimento. Assim todos os branchs ficarão atualizados.<br>
+- Irá realizar o merge com a master, caso tenha commit na release, ele retornará para desenvolvimento. Assim todos os branchs ficarão atualizados.
 
--	Ao término irá abrir no bash o vim (editor de texto) para adicionar a mensagem. Caso tenha o git extensions, abrirá uma janela gráfica para escrever a mensagem.
+- Ao término irá abrir no bash o vim (editor de texto) para adicionar a mensagem. Caso tenha o git extensions, abrirá uma janela gráfica para escrever a mensagem.
 Comandos Vim: “:q” quit, “cq” quit without writing, “wq” write and quit, “:e” edit, “e!” edit and discard changes.
-Adicione a mensagem: 1.4.0<br>
+Adicione a mensagem: 1.4.0
 
--	Caso dê tudo certo, exibirá: merge into master, release tagged 1.4.0, release back-merged into desenvolvimento, release/1.4.0 locally deleted, remotely deleted, e fará o checkout para desenvolvimento.<br>
+- Caso dê tudo certo, exibirá: merge into master, release tagged 1.4.0, release back-merged into desenvolvimento, release/1.4.0 locally deleted, remotely deleted, e fará o checkout para desenvolvimento.
 
--	Enviar as alterações locais para o remoto: git push --tags<br>
+- Enviar as alterações locais para o remoto: git push --tags
 ```
 git flow release finish 1.4.0
 ```
 
--	Para atualizar a branch de desenvolvimento remoto digite:
+- Para atualizar a branch de desenvolvimento remoto digite:
 ```
 git push
 ```
 
--	Realizar o mesmo processo para a master:
+- Realizar o mesmo processo para a master:
 ```
 git checkout master e git push
 ```

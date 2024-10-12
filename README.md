@@ -188,6 +188,7 @@ git push
 ---
 <a name="conflitos"></a>
 ### Resolvendo Conflitos: - [**[indice]**](#home)
+
 #### Alinhar:
 - Quando ocorrer conflitos e você não for o único desenvolvedor, alinhar com os outros devs quais dados manter.
 

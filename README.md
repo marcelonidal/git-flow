@@ -29,7 +29,7 @@
 
 Conventional commit: https://www.conventionalcommits.org/<br>
 
-versionamento semântico (Semantic Versioning) segue o formato MAJOR.MINOR.PATCH<br>
+versionamento semântico (Semantic Versioning)[https://semver.org/] segue o formato MAJOR.MINOR.PATCH<br>
 
 MAJOR: Mudanças incompatíveis com versões anteriores (quando você faz uma alteração que quebra a compatibilidade).<br>
 MINOR: Adição de novas funcionalidades de forma compatível com versões anteriores.<br>

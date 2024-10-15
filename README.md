@@ -29,11 +29,20 @@
 
 Conventional commit: https://www.conventionalcommits.org/<br>
 
+<type>[optional scope]: <description><br>
+[optional body]<br>
+[optional footer(s)]<br>
+Eg: feat(api): adicionar suporte para autenticação JWT<br>
+
 Versionamento semântico [(Semantic Versioning)](https://semver.org/) segue o formato MAJOR.MINOR.PATCH<br>
 
 MAJOR: Mudanças incompatíveis com versões anteriores (quando você faz uma alteração que quebra a compatibilidade).<br>
 MINOR: Adição de novas funcionalidades de forma compatível com versões anteriores.<br>
 PATCH: Correções de bugs que mantêm a compatibilidade com a versão anterior.<br>
+Eg: 2.1.5 significa:<br>
+2: versão major, com mudanças significativas.<br>
+1: novas funcionalidades foram adicionadas de maneira compatível.<br>
+5: houve 5 correções de bugs ou pequenas melhorias desde a última versão minor.<br>
 
 ---
 <a name="feature"></a>

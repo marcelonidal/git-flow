@@ -39,6 +39,7 @@ Eg: feat(api): adicionar suporte para autenticação JWT<br>
 MAJOR: Mudanças incompatíveis com versões anteriores (quando você faz uma alteração que quebra a compatibilidade).<br>
 MINOR: Adição de novas funcionalidades de forma compatível com versões anteriores.<br>
 PATCH: Correções de bugs que mantêm a compatibilidade com a versão anterior.<br>
+
 Eg: 2.1.5 significa:<br>
 2: versão major, com mudanças significativas.<br>
 1: novas funcionalidades foram adicionadas de maneira compatível.<br>

@@ -27,14 +27,14 @@
 <a name="versao"></a>
 ### Boas práticas de versionamento: - [**[indice]**](#home)
 
-Conventional commit: https://www.conventionalcommits.org/<br>
+#### Conventional commit: https://www.conventionalcommits.org/<br>
 
 <type>[optional scope]: <description><br>
 [optional body]<br>
 [optional footer(s)]<br>
 Eg: feat(api): adicionar suporte para autenticação JWT<br>
 
-Versionamento semântico [(Semantic Versioning)](https://semver.org/) segue o formato MAJOR.MINOR.PATCH<br>
+#### Versionamento semântico [(Semantic Versioning)](https://semver.org/) segue o formato MAJOR.MINOR.PATCH<br>
 
 MAJOR: Mudanças incompatíveis com versões anteriores (quando você faz uma alteração que quebra a compatibilidade).<br>
 MINOR: Adição de novas funcionalidades de forma compatível com versões anteriores.<br>

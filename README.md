@@ -4,6 +4,7 @@
 ### Indice
 
 - [Introdução](#intro)
+- [Versões](#versao)
 - [Feature](#feature)
 - [Release](#release)
 - [Hotfix](#hotfix)
@@ -21,6 +22,18 @@
 **Release:** Preparação para que o desenvolvimento entre em produção. Quando a release é finalizada ela faz um merge com a master, também volta para desenvolvimento para atualizar o que foi alterado.<br>
 **Develop:** Desenvolvimento, criada a partir da master.<br>
 **Feature:** Criada a partir do desenvolvimento, serve para adicionar uma nova funcionalidade. Quando finalizada, ela é mergeada para a desenvolvimento (pull request).<br>
+
+---
+<a name="versao"></a>
+### Boas práticas de versionamento: - [**[indice]**](#home)
+
+Conventional commit: https://www.conventionalcommits.org/<br>
+
+versionamento semântico (Semantic Versioning) segue o formato MAJOR.MINOR.PATCH<br>
+
+MAJOR: Mudanças incompatíveis com versões anteriores (quando você faz uma alteração que quebra a compatibilidade).<br>
+MINOR: Adição de novas funcionalidades de forma compatível com versões anteriores.<br>
+PATCH: Correções de bugs que mantêm a compatibilidade com a versão anterior.<br>
 
 ---
 <a name="feature"></a>

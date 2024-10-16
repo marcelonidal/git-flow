@@ -17,6 +17,8 @@
 
    ![git1](img/git1.png)<br>
 
+Learning git: https://learngitbranching.js.org/<br>
+
 **Master:** código executado em produção.<br>
 **Hotfix:** Criada quando há um bug em produção. Os ajustes realizados são aplicados na master e na de desenvolvimento, assim mantendo todos atualizados.<br>
 **Release:** Preparação para que o desenvolvimento entre em produção. Quando a release é finalizada ela faz um merge com a master, também volta para desenvolvimento para atualizar o que foi alterado.<br>

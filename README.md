@@ -19,7 +19,7 @@
 
 Learning git: https://learngitbranching.js.org/<br>
 
-O Git-Flow é um framework de ramificação (branching) para Git que define uma estrutura organizada para gerenciar o ciclo de vida de desenvolvimento de um projeto.
+O Git-Flow é um framework de ramificação (branching) para Git que define uma estrutura organizada para gerenciar o ciclo de vida de desenvolvimento de um projeto.<br>
 
 **Master:** código executado em produção.<br>
 **Hotfix:** Criada quando há um bug em produção. Os ajustes realizados são aplicados na master e na de desenvolvimento, assim mantendo todos atualizados.<br>

@@ -514,7 +514,7 @@ git push origin :refs/heads/<nome_da_branch>
 
 O git merge e o git rebase são duas formas de integrar mudanças de uma branch em outra no Git.<br>
 
-A diferença entre MERGE e REBASE é que enquanto o MERGE mescla os projetos e cria um commit (projeto público e mantém o histórico), o REBASE coloca as modificações após o último commit e cria um commit no final (não mantém o histórico).<br>
+A diferença entre MERGE e REBASE é que enquanto o MERGE mescla os projetos e cria um commit (mantém o histórico), o REBASE coloca as modificações após o último commit e cria um commit no final (não mantém o histórico).<br>
 
 > [!NOTE]
 > é necessário estar na Branch que você quer receber as modificações e aplicar esse comando sempre chamando a branch que deseja juntar.
